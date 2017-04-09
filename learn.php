@@ -5,32 +5,26 @@
         <link type="text/css" rel="stylesheet" href="css/main.css" />
         <title>Learn something new!</title>
     </head>
-    <body>
-    
+    <body>   
         <div id="content">
             <!-- Header-->
             <div id="header">
                 <!-- Navigation Bar -->   
                 <nav>
-                    <a href="index.php">Home</a>
-                    
+                    <a href="index.php">Home</a>                    
                     <a href="aboutme.html">About</a>
-                            
                     <a href="learn.php">Learn</a>
-                    
                     <a href="media.html">Media</a>
-                    
                     <a href="contactme.php">Contact Me</a>
                  </nav>
             <!-- header end -->
-            </div>
-            
+            </div>           
             <!--Learn something starts here.-->
             <div class="container">
                 <div class="form">
                     <h1>Learn something new</h1>  
                     <p>I'm a huge fan of learning foreign languages... I'd like to share my knowledge of some basc phrases. Enjoy!</p>
-
+                    <!-- Setting Up PHP -->
                     <form action="learn.php" method="post" >
                          <select name="greetings">
                             <option value="0">Hello</option>
@@ -47,8 +41,7 @@
                              <br><br>
                         <input type="submit" name="submit" value="submit" />  
                     </form>  
-                </div>
-                
+                </div>             
                 
             <!--PHP below -->  
             <?php
@@ -61,30 +54,29 @@
 
                     if ($_POST['language']==0) {    
                         $language="French";
-                        $hello = $french[$_POST['greetings']];
+                        $phrase = $french[$_POST['greetings']];
                     }
 
                     if ($_POST['language']==1) {      
                         $language="Chinese";
-                        $hello = $chinese[$_POST['greetings']];
+                        $phrase = $chinese[$_POST['greetings']];
                     }
 
                     if ($_POST['language']==2) {
                         $language="Spanish";
-                        $hello = $spanish[$_POST['greetings']];
+                        $phraseo = $spanish[$_POST['greetings']];
                     }
 
                     if ($_POST['language']==3) {
                         $language="Korean";
-                        $hello = $korean[$_POST['greetings']];
+                        $phrase = $korean[$_POST['greetings']];
                     }
 
-                echo " Congrats! You just learned how to say \"$hello\" in $language!";
+                echo " Congrats! You just learned how to say \"$phrase\" in $language!";
                 }
             ?>
             <!-- end of container div -->
             </div>
         </div>
-
     </body>
 </html>
